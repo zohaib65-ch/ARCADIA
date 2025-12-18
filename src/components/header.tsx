@@ -62,6 +62,7 @@ export function Header() {
                   </div>
                 </Link>
               </DropdownMenuItem>
+              <div className="border-t border-white/40 my-1" />
               <DropdownMenuItem asChild>
                 <Link href="#mecha" className=" px-4 py-3 flex items-start gap-4 justify-start">
                   <div>
@@ -73,7 +74,8 @@ export function Header() {
                   </div>
                 </Link>
               </DropdownMenuItem>
-              <div className="border-t-2 border-white/40 mt-2">
+              <div className="border-t border-white/40 my-1" />
+              <div className="mt-2">
                 <div className="flex items-center justify-center gap-2 ps-10 py-3 font-bold text-xs">
                   <Grip className="h-4 w-4" />
                   TOUS LES ÉVÉNEMENTS À VENIR
