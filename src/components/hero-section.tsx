@@ -1,31 +1,34 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { ArrowRight } from "lucide-react";
+import { Play } from "lucide-react";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-8 py-32">
+    <section className="relative min-h-screen flex items-center justify-center px-4 md:px-8 py-20 md:py-32">
       <div className="max-w-[1400px] w-full">
-        <div className="max-w-3xl space-y-8">
-          {/* Main Heading */}
-          <h1 className="text-white text-6xl md:text-7xl lg:text-8xl font-bold leading-tight tracking-tight">
+        <div className="max-w-3xl space-y-6 md:space-y-8">
+          <h1 className="text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight tracking-tight">
             WHERE EXPERIENCES
             <br />
             TAKE SHAPE
           </h1>
-
-          {/* Subtitle */}
-          <p className="text-white/90 text-lg md:text-xl max-w-2xl">Une maison de production dédiée à la création d&apos;expériences immersives et tournées vers l&apos;avenir</p>
-
-          {/* Call to Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 pt-4">
-            <Button variant="default" size="lg" className="bg-white text-black hover:bg-white/90 font-medium text-sm tracking-wider px-8 h-12">
-              À PROPOS D&apos;ARCADIA PRODUCTIONS
+          <p className="text-white/90 text-sm md:text-base font-normal max-w-lg">Une maison de production dédiée à la création d&apos;expériences immersives et tournées vers l&apos;avenir</p>
+          <div className="flex flex-col md:flex-row gap-3 md:gap-4 pt-2 md:pt-4">
+            <Button
+              variant="default"
+              size="lg"
+              className="bg-white text-black hover:bg-white/90 font-medium rounded-none text-xs md:text-sm tracking-wider px-6 md:px-8 h-14 md:h-16 lg:h-18 w-full sm:w-auto"
+            >
+              <strong className="text-xs md:text-sm font-extrabold">À PROPOS D&apos;ARCADIA</strong> <span className="text-xs md:text-sm font-normal">PRODUCTIONS</span>
             </Button>
-            <Button variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white hover:text-black font-medium text-sm tracking-wider px-8 h-12 group">
-              DÉCOUVRIR ARCADIA PRODUCTIONS
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <Button
+              variant="outline"
+              size="lg"
+              className="border-2 h-14 md:h-16 lg:h-18 border-white bg-transparent text-white hover:bg-white rounded-none hover:text-black font-medium text-xs md:text-sm tracking-wider px-6 md:px-8 group w-full sm:w-auto"
+            >
+              <strong className="text-xs md:text-sm font-extrabold">DÉCOUVRIR ARCADIA</strong> <span className="text-xs md:text-sm font-normal">PRODUCTIONS</span>
+              <Play className="w-4 h-4 md:w-5 md:h-5" />
             </Button>
           </div>
         </div>
