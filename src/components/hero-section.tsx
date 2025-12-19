@@ -18,14 +18,14 @@ export function HeroSection() {
             <Button
               variant="default"
               size="lg"
-              className="bg-white text-black hover:bg-white/90 font-medium rounded-none text-xs md:text-sm tracking-wider px-6 md:px-8 h-14 md:h-16 lg:h-18 w-full sm:w-auto"
+              className="bg-white text-black hover:bg-transparent cursor-pointer border hover:border-white hover:text-white font-medium rounded-none text-xs md:text-sm tracking-wider px-6 md:px-8 h-14 md:h-16 lg:h-18 w-full sm:w-auto"
             >
               <strong className="text-xs md:text-sm font-extrabold">À PROPOS D&apos;ARCADIA</strong> <span className="text-xs md:text-sm font-normal">PRODUCTIONS</span>
             </Button>
             <Button
               variant="outline"
               size="lg"
-              className="border-2 h-14 md:h-16 lg:h-18 border-white bg-transparent text-white hover:bg-white rounded-none hover:text-black font-medium text-xs md:text-sm tracking-wider px-6 md:px-8 group w-full sm:w-auto"
+              className="border-2 h-14 md:h-16 lg:h-18 cursor-pointer border-white bg-transparent text-white hover:bg-white rounded-none hover:text-black font-medium text-xs md:text-sm tracking-wider px-6 md:px-8 group w-full sm:w-auto"
             >
               <strong className="text-xs md:text-sm font-extrabold">DÉCOUVRIR ARCADIA</strong> <span className="text-xs md:text-sm font-normal">PRODUCTIONS</span>
               <Play className="w-4 h-4 md:w-5 md:h-5" />

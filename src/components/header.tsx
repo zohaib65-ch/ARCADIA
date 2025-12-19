@@ -21,6 +21,7 @@ const navItems = [
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 py-6 md:py-10">
@@ -31,28 +32,31 @@ export function Header() {
         <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="xl:hidden text-white p-2 hover:bg-white/10 rounded-md transition-colors z-50" aria-label="Toggle menu">
           {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
-        <nav className="hidden xl:flex items-center gap-8">
+        <nav className="hidden xl:flex items-center gap-6">
           {navItems.map((item) => (
-            <Link key={item.label} href={item.href} className="text-white text-[11px] font-bold hover:opacity-80 transition-opacity">
+            <Link key={item.label} href={item.href} className="text-white text-[10px] font-bold hover:opacity-80 transition-opacity py-1 px-2">
               {item.label}
             </Link>
           ))}
         </nav>
         <div className="hidden xl:flex items-center gap-2">
           <div className="flex items-center gap-2">
-            <Button variant="ghost" size="sm" className="text-white hover:bg-white/10 gap-2">
+            <Button variant="ghost" size="sm" className="text-white cursor-pointer gap-2">
               <span className="text-sm font-medium">FR</span>
               <Globe className="w-4 h-4" />
             </Button>
           </div>
-          <DropdownMenu>
-            <DropdownMenuTrigger className="hidden bg-transparent lg:inline-flex items-center gap-4 justify-between w-[250px] h-10 px-3 rounded-md border-2 border-white/40 text-white font-bold">
+          <DropdownMenu open={dropdownOpen} onOpenChange={setDropdownOpen}>
+            <DropdownMenuTrigger className="hidden bg-transparent cursor-pointer lg:inline-flex items-center gap-4 justify-between w-[250px] h-10 px-3 rounded-md border-2 border-white/40 text-white font-bold hover:border-white/60 transition-colors">
               <span className="font-bold text-xs">PROCHAIN ÉVÈNEMENTS</span>
-              <ChevronDown />
+              <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${dropdownOpen ? "rotate-180" : ""}`} />
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="bg-transparent border-none shadow-none text-white mt-2 p-2 w-[290px]">
+            <DropdownMenuContent className="bg-transparent border-none shadow-none text-white mt-2 p-2 w-[290px] animate-in fade-in slide-in-from-top-2 duration-200">
               <DropdownMenuItem asChild>
-                <Link href="#aurora" className=" px-4 py-3 flex items-start gap-4 justify-start">
+                <Link
+                  href="#aurora"
+                  className="px-4 py-3 flex items-start gap-4 justify-start hover:bg-white/10 rounded transition-colors duration-200 animate-in fade-in slide-in-from-left-4 duration-300 [animation-delay:50ms]"
+                >
                   <div>
                     <Image src={drop1} alt="Aurora Nights" width={80} height={50} className="object-contain" />
                   </div>
@@ -64,7 +68,10 @@ export function Header() {
               </DropdownMenuItem>
               <div className="border-t border-white/40 my-1" />
               <DropdownMenuItem asChild>
-                <Link href="#mecha" className=" px-4 py-3 flex items-start gap-4 justify-start">
+                <Link
+                  href="#mecha"
+                  className="px-4 py-3 flex items-start gap-4 justify-start hover:bg-white/10 rounded transition-colors duration-200 animate-in fade-in slide-in-from-left-4 duration-300 [animation-delay:100ms]"
+                >
                   <div>
                     <Image src={drop2} alt="Mecha Rumble" width={80} height={50} className="object-contain" />
                   </div>
@@ -75,9 +82,9 @@ export function Header() {
                 </Link>
               </DropdownMenuItem>
               <div className="border-t border-white/40 my-1" />
-              <div className="mt-2">
-                <div className="flex items-center justify-center gap-2 ps-10 py-3 font-bold text-xs">
-                  <Grip className="h-4 w-4" />
+              <div className="mt-2 animate-in fade-in slide-in-from-left-4 duration-300 [animation-delay:150ms]">
+                <div className="flex items-center justify-center gap-2 ps-9 py-3 font-bold text-xs text-white cursor-pointer hover:text-white/80 transition-all duration-300 group hover:gap-3">
+                  <Grip className="h-4 w-4 group-hover:rotate-90 transition-transform duration-300" />
                   TOUS LES ÉVÉNEMENTS À VENIR
                 </div>
               </div>
